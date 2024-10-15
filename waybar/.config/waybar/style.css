@@ -1,0 +1,9 @@
+@import url("file:///etc/xdg/waybar/style.css");
+
+#clock {
+    font-size: 14;
+    font-weight: 600;
+    font-family: "Cantarell"; /* Replace with your desired font */
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    color: #FFFFFF; /* Font color, white in this example */
+}
