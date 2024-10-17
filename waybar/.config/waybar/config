@@ -14,7 +14,6 @@
         "clock"
     ],
     "modules-right": [
-        // "custom/spotify",
         "custom/media",
         "tray",
         // "mpd",
@@ -210,14 +209,6 @@
         "escape": true,
         "exec": "/usr/bin/python3 /home/enzo/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "python3 $HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
-    "custom/spotify": {
-        "exec": "python3 $HOME/.config/waybar/mediaplayer.py --player spotify",
-        "format": "{}",
-        "return-type": "json",
-        "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous"
     },
     "custom/power": {
         "format" : "  ⏻  ",
