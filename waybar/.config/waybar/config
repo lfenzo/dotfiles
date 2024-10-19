@@ -1,11 +1,9 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 25, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 15, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/window"
@@ -43,7 +41,7 @@
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{icon}",
+        "format": "{name}",
         "format-icons": {
 //            "1": "",
 //            "2": "",
@@ -112,9 +110,8 @@
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
         "format": "{:%a %e %b. %H:%M}",
-        // "format-alt": "{:%Y-%m-%d}"
+        "on-click": "flatpak run org.gnome.Calendar",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "cpu": {
@@ -185,13 +182,13 @@
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
+            "headphone": "<span font='Font Awesome 5 Free 11'></span>",
             "hands-free": "",
             "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [ "", "", "" ]
         },
         "tooltip": true,
         "tooltip-format": "Output: {desc}",

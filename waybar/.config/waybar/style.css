@@ -1,5 +1,43 @@
 @import url("file:///etc/xdg/waybar/style.css");
 
+* {
+    font-size: 13;
+}
+
+#workspaces {
+    background-color: transparent;
+}
+
+#workspaces button {
+    all: initial;
+    min-width: 0;
+    box-shadow: inset 0 -3px transparent;
+    padding: 2px 5px;
+    min-height: 0;
+    margin: 5px 5px;
+    border-radius: 5px;
+    /* background-color: #181825; */
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    color: #1e1e2e;
+    background-color: #cdd6f4;
+}
+
+#workspaces button.active {
+    color: #1e1e2e;
+    background-color: #EEB806;
+}
+
+#workspaces button.urgent {
+    color: #1e1e2e;
+    background-color: #f38ba8;
+}
+
 #clock {
     font-size: 14;
     font-weight: 600;
