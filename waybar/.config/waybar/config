@@ -112,7 +112,6 @@
     "clock": {
         "format": "{:%a %e %b. %H:%M}",
         "on-click": "flatpak run org.gnome.Calendar",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "cpu": {
         "format": "<span font='Font Awesome 6 Free 11'></span> {usage}%",
