@@ -3,7 +3,7 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 15, // Waybar height (to be removed for auto height)
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 2, // Gaps between modules (4px)
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/window"
@@ -119,7 +119,8 @@
         "tooltip": false
     },
     "memory": {
-        "format": "<span font='Font Awesome 6 Free 11'></span> {}%"
+        "format": "<span font='Font Awesome 6 Free 11'></span> {}%",
+        "on-click": "flatpak run net.nokyan.Resources"
     },
     "temperature": {
         // "thermal-zone": 2,

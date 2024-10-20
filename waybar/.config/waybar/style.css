@@ -1,6 +1,5 @@
 * {
     font-family: 'Cantarell';
-    font-weight: 700;
     border: none;
     border-radius: 0;
     font-size: 14px;
@@ -22,6 +21,7 @@ window#waybar {
 
 #workspaces button.active {
     color: #ffffff;
+    font-weight: 900;
     border-bottom: 2px solid white;
 }
 
@@ -35,10 +35,12 @@ window#waybar {
 }
 
 #battery, #cpu, #custom-media, #memory, #temperature, #backlight, #network, #pulseaudio, #mode, #idle_inhibitor, #power-profiles-daemon {
+    font-weight: 600;
+    color: #F4F6FF;
     padding-right: 10px;
     padding-left: 10px;
-    margin-right: 3px;
-    margin-left: 3px;
+    margin-right: 2px;
+    margin-left: 2px;
     border-top: 2px solid #6F747C;
 }
 
@@ -68,7 +70,7 @@ window#waybar {
 
 #clock {
     /*background-color: #64727D;*/
-    font-weight: bold;
+    font-weight: 700;
 }
 
 #battery {
