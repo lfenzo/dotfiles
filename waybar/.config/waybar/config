@@ -17,7 +17,7 @@
         // "mpd",
         // "idle_inhibitor",
         "pulseaudio",
-        // "network",
+        "network",
         "power-profiles-daemon",
         "cpu",
         "memory",
@@ -115,11 +115,11 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "<span font='Font Awesome 6 Free 11'></span> {usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "<span font='Font Awesome 6 Free 11'></span> {}%"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -140,11 +140,11 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -153,7 +153,7 @@
         "bat": "BAT2"
     },
     "power-profiles-daemon": {
-      "format": "{icon}",
+      "format": "<span font='Font Awesome 6 Free 11'>{icon}</span>",
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
       "tooltip": true,
       "format-icons": {
@@ -165,30 +165,33 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click": "nm-applet --indicator"
+        "format-wifi": "<span font='Font Awesome 6 Free 11'></span>  {essid} ({signalStrength}%)",
+        "format-ethernet": "  {ipaddr}",
+        "tooltip-format": "{ifname} via {gwaddr}/{cidr}",
+        "format-linked": "  {ifname} (No IP)",
+        "format-disconnected": "<span font='Font Awesome 6 Free 11'>⚠</span>  Disconnected",
+        "on-click": "nm-connection-editor"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{icon}  {volume}% {desc}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "<span font='Font Awesome 5 Free 11'></span>",
+            "headphone": "<span font='Font Awesome 6 Free 11'></span>",
             "hands-free": "",
             "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": [ "", "", "" ]
+            "default": [
+                "<span font='Font Awesome 6 Free 11'></span>",
+                "<span font='Font Awesome 6 Free 11'></span>",
+                "<span font='Font Awesome 6 Free 11'></span>"
+            ]
         },
         "tooltip": true,
         "tooltip-format": "Output: {desc}",
@@ -208,7 +211,7 @@
         // "exec": "python3 $HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
-        "format" : "  ⏻  ",
+        "format" : "  <span font='Font Awesome 6 Free 11'></span>  ",
 		"tooltip": false,
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
