@@ -169,8 +169,8 @@
     "bluetooth": {
         "format": "<span font='Font Awesome 6 Free 11'></span>  {status}",
         "format-disabled": "<span font='JetBrainsMono NF'>󰂲</span> {status}",
-        "format-connected": "󰂱 {device_alias}",
-        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "format-connected": "<span font='Font Awesome 6 Free 11'>󰂱</span> {device_alias}",
+        "format-connected-battery": "<span font='Font Awesome 6 Free 11'>󰂱</span> {device_alias}   󰥉 {device_battery_percentage}%",
         // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
@@ -191,15 +191,15 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}% {desc}",
-        "format-bluetooth": "{icon}󰂱 {volume}% {format_source}",
-        "format-bluetooth-muted": " {icon}󰂱 {format_source}",
+        "format-bluetooth": "{icon} 󰂱 {volume}% {desc}",
+        "format-bluetooth-muted": "  {icon}󰂱 {desc}",
         "format-muted": "  {volume}% {desc}",
         "format-source": "{volume}% ",
         "format-source-muted": " ",
         "format-icons": {
             "headphone": "<span font='Font Awesome 6 Free 11'></span>",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "<span font='Font Awesome 6 Free 11'></span>",
+            "headset": "<span font='Font Awesome 6 Free 11'></span>",
             "phone": "",
             "portable": "",
             "car": "",
