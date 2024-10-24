@@ -45,7 +45,9 @@ window#waybar {
 
 
 #battery,
+#bluetooth,
 #cpu,
+#clock,
 #custom-media,
 #memory,
 #temperature,
@@ -66,6 +68,8 @@ window#waybar {
 }
 
 #battery:hover,
+#bluetooth:hover,
+#clock:hover,
 #cpu:hover,
 #custom-media:hover,
 #memory:hover,

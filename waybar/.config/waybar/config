@@ -9,24 +9,26 @@
         "hyprland/window"
     ],
     "modules-center": [
-        "clock"
     ],
     "modules-right": [
-        "custom/media",
+        // "custom/media",
         "tray",
         // "mpd",
         // "idle_inhibitor",
+        // "mpd",
         "pulseaudio",
+        "bluetooth",
         "network",
         "power-profiles-daemon",
-        "cpu",
+        // "cpu",
         "memory",
+        "battery",
         // "temperature",
         // "backlight",
         // "keyboard-state",
         // "sway/language",
-        // "battery",
         // "battery#bat2",
+        "clock",
         "custom/power"
     ],
     // Modules configuration
@@ -110,7 +112,8 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%a %e %b. %H:%M}",
+        "format": "{:%A %e %b.  %H:%M}",
+        "tooltip": false,
         "on-click": "flatpak run org.gnome.Calendar",
     },
     "cpu": {
@@ -118,7 +121,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "<span font='Font Awesome 6 Free 11'></span> {}%",
+        "format": "<span font='Font Awesome 6 Free 11'> </span> {}%",
         "on-click": "flatpak run net.nokyan.Resources"
     },
     "temperature": {
@@ -132,7 +135,7 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     },
     "battery": {
         "states": {
@@ -140,14 +143,14 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
-        "format-full": "{icon} {capacity}%",
+        "format": "<span font='JetBrainsMono NF'>{icon}</span>  {capacity}%",
+        "format-full": "<span font='JetBrainsMono NF'>{icon}</span>  {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-alt": "{icon} {time}",
+        "format-alt": "<span font='JetBrainsMono NF'>{icon}</span> {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -163,23 +166,36 @@
         "power-saver": ""
       }
     },
+    "bluetooth": {
+        "format": "<span font='Font Awesome 6 Free 11'></span>  {status}",
+        "format-disabled": "<span font='JetBrainsMono NF'>󰂲</span> {status}",
+        "format-connected": "󰂱 {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "blueman-manager"
+    },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "<span font='Font Awesome 6 Free 11'></span>  {essid} ({signalStrength}%)",
         "format-ethernet": "  {ipaddr}",
         "tooltip-format": "{ifname} via {gwaddr}/{cidr}",
         "format-linked": "  {ifname} (No IP)",
-        "format-disconnected": "<span font='Font Awesome 6 Free 11'>⚠</span>  Disconnected",
+        "format-disconnected": "<span font='Font Awesome 6 Free 11'> </span>  Disconnected",
+        // "on-click": "nm-connection-editor"
         "on-click": "nm-connection-editor"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon}  {volume}% {desc}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format": "{icon} {volume}% {desc}",
+        "format-bluetooth": "{icon}󰂱 {volume}% {format_source}",
+        "format-bluetooth-muted": " {icon}󰂱 {format_source}",
+        "format-muted": "  {volume}% {desc}",
         "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source-muted": " ",
         "format-icons": {
             "headphone": "<span font='Font Awesome 6 Free 11'></span>",
             "hands-free": "",
@@ -188,14 +204,15 @@
             "portable": "",
             "car": "",
             "default": [
-                "<span font='Font Awesome 6 Free 11'></span>",
-                "<span font='Font Awesome 6 Free 11'></span>",
-                "<span font='Font Awesome 6 Free 11'></span>"
+                "<span font='Font Awesome 6 Free 11'> </span>",
+                "<span font='Font Awesome 6 Free 11'> </span>",
+                "<span font='Font Awesome 6 Free 11'> </span>"
             ]
         },
         "tooltip": true,
         "tooltip-format": "Output: {desc}",
         "on-click": "mate-volume-control",
+        "on-double-click": "flatpak run org.pipewire.Helvum",
         "ignored-sinks": ["Easy Effects Sink"]
     },
     "custom/media": {
