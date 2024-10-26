@@ -12,13 +12,13 @@
     ],
     "modules-right": [
         // "custom/media",
-        "tray",
         // "mpd",
         // "idle_inhibitor",
         // "mpd",
+        "tray",
         "pulseaudio",
-        "bluetooth",
-        "network",
+        // "bluetooth",
+        // "network",
         "power-profiles-daemon",
         // "cpu",
         "memory",
@@ -121,7 +121,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "<span font='Font Awesome 6 Free 11'> </span> {}%",
+        "format": "<span font='Font Awesome 6 Free 11'> </span>{}%",
         "on-click": "flatpak run net.nokyan.Resources"
     },
     "temperature": {
@@ -147,7 +147,7 @@
         "format-full": "<span font='JetBrainsMono NF'>{icon}</span>  {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-alt": "<span font='JetBrainsMono NF'>{icon}</span> {time}",
+        // "format-alt": "<span font='JetBrainsMono NF'>{icon}</span> {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
@@ -191,8 +191,8 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}% {desc}",
-        "format-bluetooth": "{icon} 󰂱 {volume}% {desc}",
-        "format-bluetooth-muted": "  {icon}󰂱 {desc}",
+        "format-bluetooth": "{icon} {volume}%   󰂱  {desc}",
+        "format-bluetooth-muted": "   󰂱  {desc}",
         "format-muted": "  {volume}% {desc}",
         "format-source": "{volume}% ",
         "format-source-muted": " ",
@@ -233,8 +233,8 @@
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
+			"shutdown": "poweroff",
+			"reboot": "systemctl reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}

@@ -55,6 +55,7 @@ window#waybar {
 #network,
 #pulseaudio,
 #mode,
+#tray,
 #idle_inhibitor,
 #power-profiles-daemon {
     font-weight: 600;
