@@ -17,25 +17,28 @@ window#waybar {
     font-weight: 700;
     background: transparent;
     color: #ffffff;
+    margin: 3px;
+    padding-right: 3px;
+    padding-left: 3px;
 }
 
 #workspaces button.active {
     color: #000000;
     background: #F4F6FF;
-    margin: 3;
-    padding: 4 4;
+    margin: 3px;
+    padding-right: 3px;
+    padding-left: 3px;
     font-weight: 900;
     border-radius: 5px;
 }
 
 #workspaces button.focused {
     background: #4c566a;
-    border-bottom: 2px solid #e5e9f0;
+    border-bottom: 0px solid #e5e9f0;
 }
 
 #workspaces button:hover {
     background: #585858;
-    border-top: 0px solid transparent;
 }
 
 #workspaces button.urgent {
@@ -43,7 +46,7 @@ window#waybar {
 }
 
 #workspaces {
-    padding-right: 15px;
+    padding-right: 10px;
 }
 
 
@@ -52,6 +55,7 @@ window#waybar {
 #cpu,
 #clock,
 #custom-media,
+#custom-power,
 #memory,
 #temperature,
 #backlight,
@@ -65,8 +69,8 @@ window#waybar {
     color: #F4F6FF;
     padding-right: 10px;
     padding-left: 10px;
-    margin-right: 2px;
-    margin-left: 2px;
+    margin-right: 1px;
+    margin-left: 1px;
     border-top: 2px solid #6F747C;
     transition: background 0.15s ease-in-out; /* Add the transition */
 }
@@ -76,6 +80,7 @@ window#waybar {
 #clock:hover,
 #cpu:hover,
 #custom-media:hover,
+#custom-power:hover,
 #memory:hover,
 #temperature:hover,
 #backlight:hover,
@@ -85,6 +90,11 @@ window#waybar {
 #idle_inhibitor:hover,
 #power-profiles-daemon:hover {
     background: #4B525D;
+}
+
+#custom-power {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #custom-media {
@@ -178,3 +188,4 @@ window#waybar {
     background-color: #ecf0f1;
     color: #2d3436;
 }
+
