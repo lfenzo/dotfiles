@@ -14,15 +14,18 @@ window#waybar {
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button {
-    font-weight: 400;
+    font-weight: 700;
     background: transparent;
     color: #ffffff;
 }
 
 #workspaces button.active {
-    color: #ffffff;
+    color: #000000;
+    background: #F4F6FF;
+    margin: 3;
+    padding: 4 4;
     font-weight: 900;
-    border-bottom: 2px solid white;
+    border-radius: 5px;
 }
 
 #workspaces button.focused {
