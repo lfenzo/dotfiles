@@ -3,7 +3,7 @@
     border: none;
     border-radius: 0;
     font-size: 14px;
-    min-height: 0;
+    min-height: 0px;
 }
 
 window#waybar {
@@ -17,7 +17,7 @@ window#waybar {
     font-weight: 700;
     background: transparent;
     color: #ffffff;
-    margin: 3px;
+    margin: 2px;
     padding-right: 3px;
     padding-left: 3px;
 }
@@ -25,7 +25,7 @@ window#waybar {
 #workspaces button.active {
     color: #000000;
     background: #F4F6FF;
-    margin: 3px;
+    margin: 2px;
     padding-right: 3px;
     padding-left: 3px;
     font-weight: 900;
