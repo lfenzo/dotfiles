@@ -212,7 +212,7 @@
         "tooltip": true,
         "tooltip-format": "Output: {desc}",
         "on-click": "mate-volume-control",
-        "on-double-click": "flatpak run org.pipewire.Helvum",
+        "on-click-right": "flatpak run org.rncbc.qjackctl",
         "ignored-sinks": ["Easy Effects Sink"]
     },
     "custom/media": {
