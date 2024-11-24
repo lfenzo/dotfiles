@@ -1,4 +1,3 @@
--- Shorten function name
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 
@@ -14,6 +13,9 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+--
+-- Pluging
+--
 
 -- Neotree
 keymap("n", "<Leader>e", ":Neotree toggle<cr>", opts)
@@ -23,7 +25,6 @@ vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, {})
 vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, {})
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, {})
 vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, {})
-
 
 -- Lazygit
 vim.keymap.set('n', '<leader>gg', ":LazyGit<CR>", opts)
@@ -40,9 +41,4 @@ vim.keymap.set('n', '<Leader>dq', function()
     dapui.close()       -- Close dap-ui panes
     dap.repl.close()    -- Close the REPL if open
     dap.disconnect()    -- Disconnect the debugger
-    -- Restore neo-tree if needed
-    if vim.fn.exists(':Neotree') == 2 and vim.g.neotree_state == 'closed' then
-        vim.cmd("Neotree toggle")
-        vim.g.neotree_state = nil
-    end
 end, {})
