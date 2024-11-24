@@ -27,3 +27,22 @@ vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, {})
 
 -- Lazygit
 vim.keymap.set('n', '<leader>gg', ":LazyGit<CR>", opts)
+
+-- Debug
+vim.keymap.set('n', '<Leader>db', require('dap').toggle_breakpoint, {})
+vim.keymap.set('n', '<Leader>dr', require('dap').repl.open, {})
+vim.keymap.set('n', '<Leader>dc', require('dap').continue, {})
+vim.keymap.set('n', '<Leader>di', require('dap').step_into, {})
+vim.keymap.set('n', '<Leader>do', require('dap').step_over, {})
+vim.keymap.set('n', '<Leader>dO', require('dap').step_out, {})
+vim.keymap.set('n', '<Leader>dq', function()
+    local dap, dapui = require('dap'), require('dapui')
+    dapui.close()       -- Close dap-ui panes
+    dap.repl.close()    -- Close the REPL if open
+    dap.disconnect()    -- Disconnect the debugger
+    -- Restore neo-tree if needed
+    if vim.fn.exists(':Neotree') == 2 and vim.g.neotree_state == 'closed' then
+        vim.cmd("Neotree toggle")
+        vim.g.neotree_state = nil
+    end
+end, {})

@@ -96,6 +96,15 @@ return packer.startup(function(use)
             "nvim-lua/plenary.nvim",
         },
     })
+    use {
+        "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}
+    }
+    use {
+        "mfussenegger/nvim-dap-python"
+    }
+    use {
+        "folke/lazydev.nvim"
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     if PACKER_BOOTSTRAP then
