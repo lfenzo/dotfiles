@@ -1,0 +1,191 @@
+* {
+    font-family: 'Cantarell';
+    border: none;
+    border-radius: 0;
+    font-size: 14px;
+    min-height: 0px;
+}
+
+window#waybar {
+    background-color: rgba(29, 29, 30, 0.6);
+    color: #ffffff;
+    transition-property: background-color;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button {
+    font-weight: 700;
+    background: transparent;
+    color: #ffffff;
+    margin: 2px;
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+#workspaces button.active {
+    color: #000000;
+    background: #F4F6FF;
+    margin: 2px;
+    padding-right: 3px;
+    padding-left: 3px;
+    font-weight: 900;
+    border-radius: 5px;
+}
+
+#workspaces button.focused {
+    background: #4c566a;
+    border-bottom: 0px solid #e5e9f0;
+}
+
+#workspaces button:hover {
+    background: #585858;
+}
+
+#workspaces button.urgent {
+    background-color: #bf616a;
+}
+
+#workspaces {
+    padding-right: 10px;
+}
+
+
+#battery,
+#bluetooth,
+#cpu,
+#clock,
+#custom-media,
+#custom-power,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#mode,
+#tray,
+#idle_inhibitor,
+#power-profiles-daemon {
+    font-weight: 600;
+    color: #F4F6FF;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: 1px;
+    margin-left: 1px;
+    border-top: 2px solid #6F747C;
+    transition: background 0.15s ease-in-out; /* Add the transition */
+}
+
+#battery:hover,
+#bluetooth:hover,
+#clock:hover,
+#cpu:hover,
+#custom-media:hover,
+#custom-power:hover,
+#memory:hover,
+#temperature:hover,
+#backlight:hover,
+#network:hover,
+#pulseaudio:hover,
+#mode:hover,
+#idle_inhibitor:hover,
+#power-profiles-daemon:hover {
+    background: #4B525D;
+}
+
+#custom-power {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#custom-media {
+    background: transparent;
+}
+
+.custom-spotify {
+    background: #66cc99;
+}
+
+.custom-vlc {
+    background: #ffa000;
+}
+
+
+#network.disconnected {
+    /*background: #f53c3c;*/
+    color: #e5e9f0;
+}
+
+
+#cpu {
+    color: blue;
+    background-color: transparent;
+}
+
+#clock {
+    /*background-color: #64727D;*/
+    font-weight: 700;
+}
+
+#battery {
+    /*background-color: #000000;*/
+    color: #e5e9f0;
+}
+
+#battery {
+    /*background-color: #000000;*/
+    color: #e5e9f0;
+}
+
+#battery.charging {
+    /*background-color: #000000;*/
+    color: #e5e9f0;
+}
+
+@keyframes blink {
+    to {
+        /*background-color: #ffffff;*/
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    /*background: #2ecc71;*/
+    color: #e5e9f0;
+}
+
+#pulseaudio.muted {
+    /*background: #000000;*/
+    color: #e5e9f0;
+}
+
+#temperature {
+    background: #f0932b;
+}
+
+#temperature.critical {
+    background: #eb4d4b;
+}
+
+#tray {
+    background-color: transparent;
+}
+
+#idle_inhibitor {
+    background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
+
