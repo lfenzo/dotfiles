@@ -43,7 +43,6 @@ return packer.startup(function(use)
     use { "folke/tokyonight.nvim" }
     use { "lfenzo/fusion.nvim", branch = "main" }
     use { "nvim-treesitter/nvim-treesitter" }
-    use { "nvim-treesitter/playground" }
     use { "lewis6991/gitsigns.nvim" }
     use {
         's1n7ax/nvim-window-picker',
