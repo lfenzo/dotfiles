@@ -20,5 +20,8 @@ return {
                 ["o"] = "open",
             }
         }
-    }
+    },
+    config = function()
+        vim.keymap.set("n", "<Leader>e", ":Neotree toggle<cr>")
+    end
 }
