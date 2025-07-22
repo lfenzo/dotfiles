@@ -5,22 +5,8 @@ return {
         "nvim-lua/plenary.nvim",
         "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
         "MunifTanjim/nui.nvim",
-        -- Optional image support for file preview: See `# Preview Mode` for more information.
-            -- {"3rd/image.nvim", opts = {}},
-        -- OR use snacks.nvim's image module:
-            -- "folke/snacks.nvim",
     },
     lazy = false, -- neo-tree will lazily load itself
-    ---@module "neo-tree"
-    ---@type neotree.Config?
-    opts = {
-        window = {
-            mappings = {
-                ["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
-                ["o"] = "open",
-            }
-        }
-    },
     config = function()
         vim.keymap.set("n", "<Leader>e", ":Neotree toggle<cr>")
     end
