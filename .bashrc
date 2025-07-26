@@ -10,3 +10,12 @@ fzf-history() {
     READLINE_POINT=${#READLINE_LINE}
 }
 bind -x '"\C-r": fzf-history'
+
+# opening neovim in the current directory and mapping "v" to neovim
+v() {
+    if [ "$#" -eq 0 ]; then
+        nvim .
+    else
+        nvim "$@"
+    fi
+}
