@@ -11,7 +11,8 @@ fzf-history() {
 }
 bind -x '"\C-r": fzf-history'
 
-# opening neovim in the current directory and mapping "v" to neovim
+export PATH="$PATH:$HOME/.local/bin"
+
 v() {
     if [ "$#" -eq 0 ]; then
         nvim .
@@ -19,3 +20,6 @@ v() {
         nvim "$@"
     fi
 }
+
+# changint directory colors to yellow
+export LS_COLORS="$LS_COLORS:di=1;33"
