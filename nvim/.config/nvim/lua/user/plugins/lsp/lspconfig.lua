@@ -31,6 +31,12 @@ return {
                 }
             })
 
+             -- Julia LSP (install only LanguageServer.jl in the global environment)
+            lspconfig.julials.setup({
+                cmd = {"julia", "-e", [[ using LanguageServer; runserver() ]]},
+                capabilities = capabilities,
+            })
+
             -- Python LSP
             lspconfig.pylsp.setup({
                 capabilities = capabilities,
