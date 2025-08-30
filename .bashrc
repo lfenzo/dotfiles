@@ -23,3 +23,7 @@ v() {
 
 # changint directory colors to yellow
 export LS_COLORS="$LS_COLORS:di=1;33"
+
+export EDITOR=nvim
+export VISUAL=nvim
+
