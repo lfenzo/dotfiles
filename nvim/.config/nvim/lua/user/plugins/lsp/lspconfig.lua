@@ -13,40 +13,42 @@ return {
             },
         },
         config = function()
-            local lspconfig = require("lspconfig")
             local capabilities = require('blink.cmp').get_lsp_capabilities({
                 textDocument = { completion = { completionItem = { snippetSupport = false } } },
             })
 
+            vim.lsp.enable({
+                "lua_ls",
+                "julials",
+                "pylsp",
+            })
+
             -- Lua LS
-            lspconfig.lua_ls.setup({
+            vim.lsp.config("lua_ls", {
                 capabilities = capabilities,
-                  settings = {
+                settings = {
                     Lua = {
                         completion = {
-                            callSnippet = 'Disable',
-                            keywordSnippet = 'Disable',
+                            callSnippet = "Disable",
+                            keywordSnippet = "Disable",
                         }
                     }
                 }
             })
 
-             -- Julia LSP (install only LanguageServer.jl in the global environment)
-            lspconfig.julials.setup({
-                cmd = {"julia", "-e", [[ using LanguageServer; runserver() ]]},
+            -- Julia LSP (install LanguageServer.jl in the global environment)
+            vim.lsp.config("julials", {
                 capabilities = capabilities,
+                cmd = {"julia", "-e", [[ using LanguageServer; runserver() ]]},
             })
 
             -- Python LSP
-            lspconfig.pylsp.setup({
+            vim.lsp.config("pylsp", {
                 capabilities = capabilities,
                 settings = {
                     pylsp = {
                         plugins = {
-                            pycodestyle = {
-                                enabled = true,
-                                maxLineLength = 99,
-                            },
+                            pycodestyle = { enabled = true, maxLineLength = 99 },
                             autopep8 = { enabled = false },
                             yapf = { enabled = false },
                             pylint = { enabled = false },
