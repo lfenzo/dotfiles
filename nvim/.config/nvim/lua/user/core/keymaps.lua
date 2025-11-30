@@ -12,5 +12,7 @@ map("n", "<C-k>", "<C-w>k")
 map("n", "<C-l>", "<C-w>l")
 
 -- Tabs
-map("n", "<leader>to", "<cmd>tabnew<CR>") -- open new tab
+map("n", "<leader>to", "<cmd>tab split<CR>") -- open new tab with the current file
 map("n", "<leader>tx", "<cmd>tabclose<CR>") -- close current tab
+map("n", "<C-p>", ":tabnext<CR>")
+map("n", "<C-n>", ":tabprevious<CR>")
