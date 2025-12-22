@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 local map = vim.keymap.set -- for conciseness
 
 -- Windows
+map("n", "<leader>si", "<C-w>x") -- switch panes in the current buffer
 map("n", "<leader>sv", "<C-w>v") -- split window vertically
 map("n", "<leader>sh", "<C-w>s") -- split window horizontally
 map("n", "<leader>sx", "<cmd>close<CR>") -- close current split window
