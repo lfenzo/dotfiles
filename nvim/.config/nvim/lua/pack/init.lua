@@ -11,6 +11,7 @@ vim.pack.add({
     { src = "https://github.com/lfenzo/fusion.nvim" },
     { src = "https://github.com/kdheepak/lazygit.nvim" },
     { src = "https://github.com/saghen/blink.cmp" },
+    { src = "https://github.com/saghen/blink.lib" },
     { src = 'https://github.com/neovim/nvim-lspconfig' },
     { src = 'https://github.com/mason-org/mason.nvim' },
     { src = 'https://github.com/williamboman/mason-lspconfig.nvim' },
