@@ -17,4 +17,7 @@ vim.pack.add({
     { src = 'https://github.com/williamboman/mason-lspconfig.nvim' },
     { src = 'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim' },
     { src = 'https://github.com/s1n7ax/nvim-window-picker' },
+
+    { src = "https://github.com/nickjvandyke/opencode.nvim" },
+    { src = "https://github.com/folke/snacks.nvim" },
 })
