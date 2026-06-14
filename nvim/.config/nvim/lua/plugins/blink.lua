@@ -1,6 +1,6 @@
 require("blink.cmp").setup({
     keymap = {
-        preset = "default", ["<C-i>"] = { "accept", "fallback" }
+        preset = "default", ["<Tab>"] = { "accept", "fallback" }
     },
     appearance = {
         nerd_font_variant = "mono"

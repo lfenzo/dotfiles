@@ -22,7 +22,7 @@ require("snacks").setup({
 
 vim.o.autoread = true -- Required for `opts.events.reload`
 
-vim.keymap.set({ "n", "x" }, "<C-a>", function() require("opencode").ask("@this: ", { submit = true }) end, { desc = "Ask opencode…" })
+vim.keymap.set({ "n", "x" }, "<leader>o", function() require("opencode").ask("@this: ", { submit = true }) end, { desc = "Ask opencode…" })
 vim.keymap.set({ "n", "x" }, "<C-x>", function() require("opencode").select() end, { desc = "Select opencode…" })
 -- vim.keymap.set({ "n", "t" }, "<C-.>", function() require("opencode").toggle() end, { desc = "Toggle opencode" })
 vim.keymap.set({ "n", "x" }, "go", function() return require("opencode").operator("@this ") end, {
