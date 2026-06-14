@@ -22,3 +22,8 @@ export PATH="$PATH:$HOME/.local/bin"
 export LS_COLORS="$LS_COLORS:di=1;33"  # directory colors in yellow
 export EDITOR=nvim
 export VISUAL=nvim
+
+# Auto-start tmux if not already inside a tmux session
+if command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
+    exec tmux
+fi
